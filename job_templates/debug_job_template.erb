@@ -1,0 +1,19 @@
+<%#
+model: JobTemplate
+kind: job_template
+name: A Debug Job Template
+organizations:
+- Test
+locations:
+- Redhat
+provider_type: SSH
+job_category: Commands
+description_format: "Run %{command}"
+template_inputs:
+- name: command
+  description: Command to run on the host
+  input_type: user
+  required: true
+
+%>
+<%= input("command") %>
