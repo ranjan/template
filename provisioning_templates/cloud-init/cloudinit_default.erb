@@ -1,0 +1,45 @@
+<%#
+name: CloudInit default
+snippet: false
+model: ProvisioningTemplate
+kind: cloud-init
+organizations:
+- RedHat
+locations:
+- GSS
+%>
+<%#
+This template accepts the following parameters:
+- force-puppet: boolean (default=false)
+- enable-puppetlabs-repo: boolean (default=false)
+- enable-puppetlabs-puppet5-repo: boolean (default=false)
+- enable-puppetlabs-puppet6-repo: boolean (default=false)
+-%>
+<%
+  pm_set = @host.puppetmaster.empty? ? false : true
+  puppet_enabled = pm_set || host_param_true?('force-puppet')
+-%>
+#cloud-config
+hostname: <%= @host.name %>
+fqdn: <%= @host %>
+manage_etc_hosts: true
+users: {}
+runcmd:
+- |
+<%= indent(2) { snippet 'redhat_register' } -%>
+- |
+<%=
+  if puppet_enabled && (host_param_true?('enable-puppetlabs-repo') ||
+    host_param_true?('enable-puppetlabs-puppet6-repo') ||
+    host_param_true?('enable-puppetlabs-puppet5-repo'))
+    indent(2) { snippet 'puppetlabs_repo' }
+  elsif puppet_enabled
+    indent(2) { snippet('puppet_setup', :variables => { :full_puppet_run => true }) }
+  else
+    ''
+  end
+-%>
+phone_home:
+  url: <%= foreman_url('built') %>
+  post: []
+  tries: 10
