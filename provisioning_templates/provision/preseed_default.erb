@@ -1,13 +1,3 @@
-<%#
-name: Preseed default
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   proxy_string = host_param('http-proxy') ? " http://#{host_param('http-proxy')}:#{host_param('http-proxy-port')}" : ''
   ansible_enabled = plugin_present?('foreman_ansible')

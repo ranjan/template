@@ -1,12 +1,3 @@
-<%#
-name: fix_hosts
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 echo "<%= @host.shortname %>" > /etc/hostname
 <% if @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.major.to_i == 6 %>
 hostname <%= @host %>

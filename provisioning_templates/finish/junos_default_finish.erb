@@ -1,13 +1,3 @@
-<%#
-name: Junos default finish
-snippet: false
-model: ProvisioningTemplate
-kind: finish
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 system {
     host-name <%= @host %>;
     time-zone <%= host_param('time-zone') || 'Etc/UTC' %>;

@@ -1,13 +1,3 @@
-<%#
-name: Kickstart default
-snippet: false
-model: Ptable
-os_family: Redhat
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 zerombr
 clearpart --all --initlabel
 autopart <%= host_param('autopart_options') %>

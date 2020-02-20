@@ -1,13 +1,4 @@
 #cloud-config
-<%#
-name: coreos_cloudconfig
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   units = 0
   unless host_param_false?('enable_etcd')

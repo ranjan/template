@@ -1,14 +1,4 @@
 #cloud-config
-<%#
-name: CoreOS provision
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
 os_major  = @host.operatingsystem.major.to_i
 %>

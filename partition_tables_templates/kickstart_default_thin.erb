@@ -1,13 +1,3 @@
-<%#
-name: Kickstart default thin
-snippet: false
-model: Ptable
-os_family: Redhat
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 zerombr
 clearpart --all --initlabel
 autopart --type=thinp <%= host_param('autopart_options') %>

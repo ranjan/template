@@ -1,15 +1,3 @@
-<%#
-name: Kickstart default user data
-snippet: false
-model: ProvisioningTemplate
-kind: user_data
-oses:
-- RedHat
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
   # safemode renderer does not support unary negation

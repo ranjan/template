@@ -1,12 +1,3 @@
-<%#
-name: pxegrub_chainload
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   # paths variable must be passed into the snippet, otherwise no EFI items are rendered
   if !@paths.nil? && @paths.size > 1

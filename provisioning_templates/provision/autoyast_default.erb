@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<%#
-name: AutoYaST default
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   # safemode renderer does not support unary negation
   pm_set = @host.puppetmaster.empty? ? false : true

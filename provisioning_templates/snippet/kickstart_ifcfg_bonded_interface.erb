@@ -1,12 +1,3 @@
-<%#
-name: kickstart_ifcfg_bonded_interface
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%= snippet('kickstart_ifcfg_generic_interface', :variables => {
                   :interface => @interface,
                   :subnet => @subnet,

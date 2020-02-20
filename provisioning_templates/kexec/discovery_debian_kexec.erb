@@ -1,14 +1,4 @@
 <%#
-name: Discovery Debian kexec
-snippet: false
-model: ProvisioningTemplate
-kind: kexec
-organizations:
-- RedHat
-locations:
-- GSS
-%>
-<%#
 This template is used to pass command line options to kexec when reloading
 kernel on a discovered host instead of rebooting. This is useful in PXE-less
 environments. The template must generate JSON format with the following items

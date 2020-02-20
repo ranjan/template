@@ -1,16 +1,4 @@
 #!gpxe
-<%#
-name: Kickstart default iPXE
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-oses:
-- RedHat
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
   is_fedora = @host.operatingsystem.name == 'Fedora'

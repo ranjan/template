@@ -1,12 +1,3 @@
-<%#
-name: puppetlabs_repo
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 <%
 http_proxy   = host_param('http-proxy') ? " --httpproxy #{host_param('http-proxy')}" : nil
 http_port    = host_param('http-proxy-port') ? " --httpport #{host_param('http-proxy-port')}" : nil

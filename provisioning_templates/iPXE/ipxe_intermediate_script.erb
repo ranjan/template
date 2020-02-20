@@ -1,13 +1,3 @@
-<%#
-name: iPXE intermediate script
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- RedHat
-locations:
-- GSS
-%>
 #!ipxe
 # Intermediate iPXE script to report MAC address to Foreman
 <% (0..32).each do |i| -%>
