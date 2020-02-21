@@ -1,0 +1,5 @@
+<% if @host.operatingsystem.family == "Redhat" && @host.operatingsystem.major.to_i > 6 %>
+systemctl <%= input("action") %> <%= input("service") %>
+<% else %>
+service <%= input("service") %> <%= input("action") %>
+<% end -%>

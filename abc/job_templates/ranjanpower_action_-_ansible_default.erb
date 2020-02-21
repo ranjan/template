@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - command: |
+        <%= case input('action')
+          when 'restart'
+            'shutdown -r +1'
+          else
+            'shutdown -h +1'
+          end %>

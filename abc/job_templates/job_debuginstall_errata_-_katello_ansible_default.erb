@@ -1,0 +1,2 @@
+<% advisories = input(:errata).split(',').map { |e| "--advisory=#{e}" }.join(' ') %>
+<%= render_template('Run Command - Ansible Default', :command => "yum update-minimal #{advisories}") %>

@@ -1,0 +1,4 @@
+<%= render_template(
+  'Run Command - Ansible Default',
+  :command => "#{input(:helper)},katello-tracer-upload".split(',').map {|split| "#{split}" }.join("\n")
+) %>
