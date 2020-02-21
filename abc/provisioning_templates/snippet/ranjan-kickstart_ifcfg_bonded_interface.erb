@@ -1,10 +1,3 @@
-<%#
-name: ranjan-kickstart_ifcfg_bonded_interface
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Redhat
-%>
 <%= snippet('kickstart_ifcfg_generic_interface', :variables => {
                   :interface => @interface,
                   :subnet => @subnet,

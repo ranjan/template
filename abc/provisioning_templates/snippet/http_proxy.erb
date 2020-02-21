@@ -1,13 +1,3 @@
-<%#
-name: http_proxy
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 <% if (proxy = host_param("http_proxy")) -%>
 http_proxy=<%= proxy %>
 export http_proxy

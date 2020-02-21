@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Windows peSetup.cmd
-snippet: false
-model: ProvisioningTemplate
-kind: script
-organizations:
-- Redhat
-%>
 <%
   proxy_uri = host_param('http-proxy') ? "http://#{host_param('http-proxy')}:#{host_param('http-proxy-port') || 3128}" : nil
   proxy_string = proxy_uri ? "-e http_proxy=#{proxy_uri}" : ''

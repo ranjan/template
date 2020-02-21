@@ -1,11 +1,4 @@
 #cloud-config
-<%#
-name: ranjan-coreos_cloudconfig
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Redhat
-%>
 <%
   units = 0
   unless host_param_false?('enable_etcd')

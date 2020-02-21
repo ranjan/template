@@ -1,10 +1,3 @@
-<%#
-name: ranjan-fix_hosts
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Redhat
-%>
 echo "<%= @host.shortname %>" > /etc/hostname
 <% if @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.major.to_i == 6 %>
 hostname <%= @host %>

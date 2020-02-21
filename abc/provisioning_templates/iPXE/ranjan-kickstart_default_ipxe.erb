@@ -1,12 +1,4 @@
 #!gpxe
-<%#
-name: ranjan-Kickstart default iPXE
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- Redhat
-%>
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
   is_fedora = @host.operatingsystem.name == 'Fedora'

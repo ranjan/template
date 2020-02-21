@@ -1,14 +1,4 @@
 <%#
-name: pxegrub_discovery
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
-<%#
 RHEL 7 virtio driver does not have persistent naming scheme, causing interfaces
 to be named eth0, eth1, etc.. If you want to enable the new persistent naming
 scheme and get inteface names like ens3, add net.ifnames=1 to the linuxefi line

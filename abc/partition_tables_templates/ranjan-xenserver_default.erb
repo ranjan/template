@@ -1,11 +1,3 @@
-<%#
-name: ranjan-XenServer default
-snippet: false
-model: Ptable
-os_family: Xenserver
-organizations:
-- Redhat
-%>
 <%
   gueststorage = host_param('gueststorage') || 'yes'
   primary_disk = host_param('install-disk') || 'sda'

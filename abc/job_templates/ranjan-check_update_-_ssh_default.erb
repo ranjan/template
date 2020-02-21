@@ -1,15 +1,3 @@
-<%#
-name: ranjan-Check Update - SSH Default
-snippet: false
-model: JobTemplate
-job_category: Packages
-description_format: Check for package updates
-provider_type: SSH
-kind: job_template
-organizations:
-- Redhat
-%>
-
 <%
   supported_families = ['Redhat', 'Debian', 'Suse']
   render_error(N_('Unsupported or no operating system found for this host.')) unless @host.operatingsystem && supported_families.include?(@host.operatingsystem.family)

@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Windows default provision
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- Redhat
-%>
 <%
   system_locale = host_param('systemLocale') ? host_param('systemLocale') : 'en-US'
   system_ui_lang = host_param('systemUILanguage') ? host_param('systemUILanguage') : 'en-US'

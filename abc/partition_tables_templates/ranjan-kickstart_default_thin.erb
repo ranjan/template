@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Kickstart default thin
-snippet: false
-model: Ptable
-os_family: Redhat
-organizations:
-- Redhat
-%>
 zerombr
 clearpart --all --initlabel
 autopart --type=thinp <%= host_param('autopart_options') %>

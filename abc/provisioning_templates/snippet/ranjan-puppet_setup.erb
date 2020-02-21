@@ -1,11 +1,3 @@
-<%#
-name: ranjan-puppet_setup
-description: this snippet will configure the Puppet agent
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Redhat
-%>
 <%
 os_family = @host.operatingsystem.family
 os_major  = @host.operatingsystem.major.to_i
