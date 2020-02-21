@@ -1,3 +1,14 @@
+<%#
+name: Jumpstart default
+snippet: false
+model: ProvisioningTemplate
+kind: provision
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 install_type <%= @install_type %>
 partitioning explicit
 <%= @disk %>

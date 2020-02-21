@@ -1,4 +1,15 @@
 #cloud-config
+<%#
+name: CoreOS provision
+snippet: false
+model: ProvisioningTemplate
+kind: provision
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 <%
 os_major  = @host.operatingsystem.major.to_i
 %>

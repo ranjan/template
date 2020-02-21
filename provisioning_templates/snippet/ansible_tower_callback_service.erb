@@ -1,3 +1,13 @@
+<%#
+name: ansible_tower_callback_service
+snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 [Unit]
 Description=Provisioning callback to Ansible Tower
 Wants=network-online.target

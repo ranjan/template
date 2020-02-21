@@ -1,4 +1,15 @@
 <%#
+name: Kickstart oVirt-RHVH
+snippet: false
+model: ProvisioningTemplate
+kind: provision
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
+<%#
 This template accepts the following parameters:
 - liveimg_name: string (default=squashfs.img)
 - lang: string (default="en_US.UTF-8")
@@ -27,6 +38,8 @@ In this case, this repository would need to be part of the content
 view the host is assigned to. It's also possible to provide full url,
 in which case it would be used without a change.
 %>
+
+# This kickstart file was rendered from the Foreman provisioning template "<%= @template_name %>".
 
 install
 <%

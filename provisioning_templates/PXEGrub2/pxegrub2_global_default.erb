@@ -1,3 +1,14 @@
+<%#
+name: PXEGrub2 global default
+snippet: false
+model: ProvisioningTemplate
+kind: PXEGrub2
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 <%# Used to boot unknown hosts, do not associate or change the name. %>
 
 default=<%= global_setting("default_pxe_item_global", "local") %>

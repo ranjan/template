@@ -1,3 +1,13 @@
+<%#
+name: kickstart_ifcfg_generic_interface
+snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 BOOTPROTO="<%= @dhcp ? 'dhcp' : 'none' -%>"
 <%- unless @dhcp || @subnet.nil? -%>
 <%-   if @interface.ip.present? -%>

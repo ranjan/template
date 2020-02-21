@@ -1,3 +1,14 @@
+<%#
+name: XenServer default answerfile
+snippet: false
+model: ProvisioningTemplate
+kind: provision
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 <%
   subnet = @host.subnet
   dhcp = subnet.dhcp_boot_mode?

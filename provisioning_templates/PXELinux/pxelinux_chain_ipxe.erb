@@ -1,4 +1,15 @@
 <%#
+name: PXELinux chain iPXE
+snippet: false
+model: ProvisioningTemplate
+kind: PXELinux
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
+<%#
 Chainboots iPXE/gPXE from PXELinux. Make sure the OS has iPXE template
 associated and file ipxe.lkrn was copied in the TFTP directory (e.g. from
 /usr/share/ipxe/ipxe.lkrn or iPXE project web site).

@@ -1,3 +1,15 @@
+<%#
+name: Preseed default
+snippet: false
+model: Ptable
+os_family: Debian
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+- Pune
+%>
 <%
   partitioning_method = host_param('partitioning-method') ? host_param('partitioning-method') : 'regular'
   partitioning_recipe = host_param('partitioning-recipe') ? host_param('partitioning-recipe') : 'atomic'

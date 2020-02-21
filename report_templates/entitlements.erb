@@ -1,3 +1,8 @@
+<%#
+name: Entitlements
+snippet: false
+model: ReportTemplate
+%>
 <%- load_hosts(includes: [:lifecycle_environment, :operatingsystem, :architecture, :content_view, :organization, :reported_data, :subscription_facet, :pools => [:subscription]]).each_record do |host| -%>
 <%-   host.pools.each do |pool| -%>
 <%-     report_row(

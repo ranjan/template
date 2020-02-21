@@ -1,3 +1,13 @@
+<%#
+name: puppet.conf
+snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 <%
   os_family = @host.operatingsystem.family
   os_name   = @host.operatingsystem.name
@@ -41,7 +51,6 @@ digest_algorithm = sha256
 [agent]
 pluginsync      = true
 report          = true
-ignoreschedules = true
 <%- if @host.puppet_ca_server.strip -%>
 ca_server       = <%= @host.puppet_ca_server %>
 <%- end -%>

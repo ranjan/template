@@ -1,4 +1,15 @@
 <%#
+name: UserData default
+snippet: false
+model: ProvisioningTemplate
+kind: user_data
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
+<%#
 This template accepts the following parameters:
 - ssh_pwauth: boolean (default=true unless ssh_authorized_keys)
 - ssh_authorized_keys: string w newline seperated keys (default="")

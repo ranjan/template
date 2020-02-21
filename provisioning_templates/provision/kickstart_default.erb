@@ -1,4 +1,18 @@
 <%#
+name: Kickstart default
+snippet: false
+model: ProvisioningTemplate
+kind: provision
+oses:
+- RedHat
+- RedHatEnterpriseComputeNode
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
+<%#
 This template accepts the following parameters:
 - lang: string (default="en_US.UTF-8")
 - selinux-mode: string (default="enforcing")
@@ -24,6 +38,9 @@ Reference links:
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s1-kickstart2-options
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax
 %>
+
+# This kickstart file was rendered from the Foreman provisioning template "<%= @template_name %>".
+
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'
   is_fedora = @host.operatingsystem.name == 'Fedora'
@@ -75,6 +92,7 @@ liveimg --url=<%= liveimg_url %> <%= proxy_string %>
 <% @additional_media.each do |medium| -%>
 repo --name <%= medium[:name] %> --baseurl <%= medium[:url] %> <%= medium[:install] ? ' --install' : '' %><%= proxy_string %>
 <% end -%>
+<%= snippet_if_exists(template_name + " custom repositories") %>
 <% end %>
 lang <%= host_param('lang') || 'en_US.UTF-8' %>
 selinux --<%= host_param('selinux-mode') || host_param('selinux') || 'enforcing' %>
@@ -116,10 +134,6 @@ services --disabled gpm,sendmail,cups,pcmcia,isdn,rawdevices,hpoj,bluetooth,open
 realm join --one-time-password='<%= @host.otp || "$HOST[OTP]" %>' <%= @host.realm %>
 <% end -%>
 
-<% if @host.operatingsystem.name == 'Fedora' -%>
-repo --name=fedora-everything --mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=fedora-<%= @host.operatingsystem.major %>&arch=<%= @host.architecture %><%= proxy_string %>
-<% end -%>
-
 <% if @host.operatingsystem.name == 'OracleLinux' && os_major == 7 && os_minor < 5 -%>
 repo --name="Server-Mysql"
 <% end -%>
@@ -154,8 +168,10 @@ yum
 dhclient
 <% if use_ntp -%>
 ntp
+-chrony
 <% else -%>
 chrony
+-ntp
 <% end -%>
 wget
 @Core

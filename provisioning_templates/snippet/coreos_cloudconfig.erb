@@ -1,4 +1,14 @@
 #cloud-config
+<%#
+name: coreos_cloudconfig
+snippet: true
+model: ProvisioningTemplate
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+%>
 <%
   units = 0
   unless host_param_false?('enable_etcd')
