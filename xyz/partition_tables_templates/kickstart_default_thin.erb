@@ -1,0 +1,15 @@
+<%#
+name: Kickstart default thin
+snippet: false
+model: Ptable
+os_family: Redhat
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+- Pune
+%>
+zerombr
+clearpart --all --initlabel
+autopart --type=thinp <%= host_param('autopart_options') %>

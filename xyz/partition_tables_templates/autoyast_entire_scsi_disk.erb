@@ -1,0 +1,18 @@
+<%#
+name: AutoYaST entire SCSI disk
+snippet: false
+model: Ptable
+os_family: Suse
+organizations:
+- Default Organization
+- Redhat
+locations:
+- Default Location
+- Pune
+%>
+  <partitioning  config:type="list">
+    <drive>
+      <device>/dev/sda</device>
+      <use>all</use>
+    </drive>
+  </partitioning>

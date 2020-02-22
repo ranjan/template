@@ -1,0 +1,12 @@
+<%#
+name: ranjan-WAIK default PXELinux
+snippet: false
+model: ProvisioningTemplate
+kind: PXELinux
+organizations:
+- Redhat
+%>
+DEFAULT winPE
+
+LABEL winPE
+    KERNEL /Boot/startrom.0
