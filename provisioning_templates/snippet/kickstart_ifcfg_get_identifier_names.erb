@@ -1,13 +1,3 @@
-<%#
-name: kickstart_ifcfg_get_identifier_names
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 <%- if @identifier -%>
 <%=   "real=\"#{@identifier}\"" %>
 <%- else -%>

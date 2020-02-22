@@ -1,14 +1,3 @@
-<%#
-name: Junos default ZTP config
-snippet: false
-model: ProvisioningTemplate
-kind: ZTP
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 system {
     host-name <%= @host.shortname %>;
     root-authentication {

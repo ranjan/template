@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Preseed default finish
-snippet: false
-model: ProvisioningTemplate
-kind: finish
-organizations:
-- Redhat
-%>
 <%
   # safemode renderer does not support unary negation
   pm_set = @host.puppetmaster.empty? ? false : true

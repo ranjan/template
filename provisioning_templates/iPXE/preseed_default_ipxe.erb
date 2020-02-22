@@ -1,15 +1,4 @@
 #!gpxe
-<%#
-name: Preseed default iPXE
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 <% if @host.operatingsystem.name == 'Debian' -%>
   <%- keyboard_params = "auto=true domain=#{@host.domain}" -%>
 <% else -%>

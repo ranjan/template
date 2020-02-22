@@ -1,13 +1,3 @@
-<%#
-name: ansible_provisioning_callback
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 <% if host_param_true?('ansible_tower_provisioning') -%>
 <%
   rhel_compatible = @host.operatingsystem.family == 'Redhat' && @host.operatingsystem.name != 'Fedora'

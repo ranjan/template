@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Windows default PXELinux
-snippet: false
-model: ProvisioningTemplate
-kind: PXELinux
-organizations:
-- Redhat
-%>
 DEFAULT menu
 LABEL menu
      COM32 linux.c32 <%= @host.operatingsystem.bootfile(medium_provider,:kernel) %>

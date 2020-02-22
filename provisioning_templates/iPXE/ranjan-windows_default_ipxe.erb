@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Windows default iPXE
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- Redhat
-%>
 
 initrd <%= foreman_url('script') %> peSetup.cmd
 

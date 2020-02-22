@@ -1,11 +1,3 @@
-<%#
-name: ranjan-XenServer default answerfile
-snippet: false
-model: ProvisioningTemplate
-kind: provision
-organizations:
-- Redhat
-%>
 <%
   subnet = @host.subnet
   dhcp = subnet.dhcp_boot_mode?

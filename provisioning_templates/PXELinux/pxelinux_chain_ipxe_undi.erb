@@ -1,15 +1,4 @@
 <%#
-name: PXELinux chain iPXE UNDI
-snippet: false
-model: ProvisioningTemplate
-kind: PXELinux
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
-<%#
 Chainboots iPXE/gPXE from PXELinux via UNDI. Make sure the OS has an iPXE
 template associated and the file undionly.kpxe was copied into the TFTP
 directory as undionly-ipxe.0 (e.g. from /usr/share/ipxe/undionly.kpxe or

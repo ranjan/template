@@ -1,13 +1,3 @@
-<%#
-name: kickstart_networking_setup
-snippet: true
-model: ProvisioningTemplate
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 <%- bonded_interfaces = [] -%>
 <%- bonding_interfaces = [] -%>
 <%- @host.bond_interfaces.each do |bond| -%>

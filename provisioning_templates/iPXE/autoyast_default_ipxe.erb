@@ -1,15 +1,4 @@
 #!gpxe
-<%#
-name: AutoYaST default iPXE
-snippet: false
-model: ProvisioningTemplate
-kind: iPXE
-organizations:
-- Default Organization
-- Redhat
-locations:
-- Default Location
-%>
 
 <% boot_files_uris = @host.operatingsystem.boot_files_uri(medium_provider) -%>
 <% kernel = boot_files_uris[0] -%>

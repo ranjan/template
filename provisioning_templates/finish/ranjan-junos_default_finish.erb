@@ -1,11 +1,3 @@
-<%#
-name: ranjan-Junos default finish
-snippet: false
-model: ProvisioningTemplate
-kind: finish
-organizations:
-- Redhat
-%>
 system {
     host-name <%= @host %>;
     time-zone <%= host_param('time-zone') || 'Etc/UTC' %>;
